@@ -1,0 +1,28 @@
+<input type="text" placeholder="enter the name to search" class="search"  name="uname" [(ngModel)]="uname"
+(ngModelChange)="Search()">
+
+<table class="table">
+    <thead class="table-dark">
+     <tr> 
+       <td>Sample ID </td>
+         <td>Sample Date</td>
+         <td (click)="sort(uname)">Patient Name&nbsp;<i class="fa fa-sort"></i></td>
+         <td>Email ID</td>
+         <td>Edit Details</td>
+         <td>View All Reports</td>
+         <td>View Details</td>
+     </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let v of result.data.userData | filter: uname |orderBy:key">
+        <td>{{v._id}}</td> 
+        <td>July 25,2021,6:30:18 PM</td>
+        <td>{{v.uname}}</td> 
+        <td>{{v.uemail}}</td>
+        <td><button class="btn btn-success" [routerLink]="['/getUser/',v._id]">edit Details</button></td>
+        <td><button class="btn btn-danger"  [routerLink]="['/viewSample']">View All reports</button></td>
+        <td><button class="btn btn-primary"  [routerLink]="['/testview']" >view Details</button></td>
+    </tr>
+    </tbody>
+  </table>  

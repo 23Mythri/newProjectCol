@@ -1,0 +1,34 @@
+  <div class="container" id="contain">
+    <form class="container md-s-10" id="form" [formGroup]="regForm" (ngSubmit)="Submit()">
+        <h2 class="lg">👉Registration</h2><br>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="km"  >UserName:</label>
+            <input type="email"   class="e1" placeholder="Enter your userName" aria-describedby="emailHelp" name="uname" formControlName="uname">
+            <span style="color: red;" *ngIf="uname?.invalid && uname?.touched" class="em">*enter valid userName</span>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="km">Email Id:</label>
+          <input type="email"   class="em1" placeholder="Enter your email id" aria-describedby="emailHelp" name="uemail" formControlName="uemail">
+          <span style="color: red;" *ngIf="uemail?.invalid && uemail?.touched" class="em">*enter valid email Id</span>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="pm" >Password :</label>
+          <input type="password" class="um1"    placeholder="enter valid password" name="upass" formControlName="upass">
+          <span style="color: red;" *ngIf="upass?.invalid && upass?.touched" class="em">*enter valid Password</span> 
+        </div>
+         <div class="mb-3">
+    <div>
+      <label class="pm">Role:</label>
+          <input type="text" class="um2" id="form3Example" placeholder="Role"
+              list="list" formControlName="role" name="role" id="role" />
+          <datalist id="list">
+              <option value="user"></option>
+              <option value="admin"></option>
+          </datalist>
+      </div>
+            
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+ 

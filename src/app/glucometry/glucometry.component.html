@@ -1,0 +1,19 @@
+<div class="container">
+    <form class="form" [formGroup]="glucomteryForm" (ngSubmit)="Submit()">
+        <h4 class="h">Add Glucomtery Report</h4><br>
+        <div id="a">
+            <input type="text" id="b" placeholder="Fasting Blood Sugar" name="fasting" formControlName="fasting"><br>
+            <span style="color: red;" *ngIf="fasting?.invalid && fasting?.touched">enter valid fasting Blood</span>
+        </div><br>
+        <div id="a">
+            <input type="text"  id="b" placeholder="Post Prandial Blood Sugar" name="post" formControlName="post"><br>
+            <span style="color: red;" *ngIf="post?.invalid && post?.touched">enter valid Post Prandial</span>
+        </div><br>
+        <div id="a">
+            <input type="text" id="b" placeholder="Glycosyated Haemoglobin" name="gly" formControlName="gly"><br>
+            <span style="color: red;" *ngIf="gly?.invalid && gly?.touched">enter valid Glycosyated</span>
+        </div><br>
+        
+        <button type="submit"class="submit">submit</button>
+    </form>
+    </div>

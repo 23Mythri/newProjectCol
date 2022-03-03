@@ -1,0 +1,17 @@
+<div class="container"> 
+  <form class="container md-s-10" id="form" [formGroup]="logForm" (ngSubmit)="Submit()">
+       <div class="form-group">
+          <h1 class="lg" style="margin-top: 50px;">👉Please Login</h1><br>
+          <label for="exampleInputEmail1" class="km">Email Id:</label>
+          <input type="email"   class="em1" placeholder="Enter your email id" aria-describedby="emailHelp" name="uemail" formControlName="uemail">
+          <span style="color: red;" *ngIf="uemail?.invalid && uemail?.touched" class="em">*enter valid email Id</span>
+       </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="pm" >Password :</label>
+          <input type="password" class="um1"    placeholder="enter valid password" name="upass" formControlName="upass" >
+          <span style="color: red;" *ngIf="upass?.invalid && upass?.touched" class="em">*enter valid Password</span>
+          <button type="submit" class="btn btn-primary">Submit</button>
+       </div>
+   </form>
+</div>

@@ -1,0 +1,28 @@
+<input type="text" placeholder="enter the name to search" class="search"  name="uname" [(ngModel)]="uname"
+(ngModelChange)="Search()">
+
+<table class="table">
+    <thead class="table-dark">
+     <tr > 
+         <td>Sample Date</td>
+         <td>Patient Name</td>
+         <td>Email ID</td>
+         <td>sample ID</td>
+         <td>Haematology Report</td>
+         <td>Thyroid Report</td>
+         <td>Glucometry Report</td>
+     </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let v of result.data | filter: uname ">
+        <td>{{v.date}}</td>
+        <td>{{v.uname}}</td>
+        <td>{{v.email}}</td>
+        <td>{{v.sampleId}}</td>
+        <td>{{v.haemotology.totalCount}}</td>
+        <td>{{v.thyroid.thyroid}}</td>
+        <td>{{v.glucometry.Calcium}}</td>
+    </tr>
+    </tbody>
+  </table>  
